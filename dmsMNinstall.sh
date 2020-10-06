@@ -210,13 +210,6 @@ if [[ ("$SWAP" == "y" || "$SWAP" == "Y" || "$SWAP" == "") ]]; then
 fi
 clear
 
-# update packages and install dependencies
-echo "Installing dependencies..."
-add-apt-repository -y ppa:bitcoin/bitcoin 
-apt-get update 
-apt-get -qq -y libdb4.8-dev libdb4.8++-dev
-clear
-
 echo "Configuring UFW..."
 # Install UFW
 if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
@@ -243,7 +236,7 @@ wget $TARBALLURL
 tar -xzvf $TARBALLNAME
 rm $TARBALLNAME
 rm -f ./dms-qt
-rm -f ./test-dms
+rm -f ./test_dms
 mkdir dms
 mv ./dmsd ~/dms
 mv ./dms-cli ~/dms
@@ -368,7 +361,7 @@ wget $TARBALLURL
 tar -xzvf $TARBALLNAME
 rm $TARBALLNAME
 rm -f ./dms-qt
-rm -f ./test-dms
+rm -f ./test_dms
 mkdir dms
 mv ./dmsd ~/dms
 mv ./dms-cli ~/dms
@@ -396,7 +389,7 @@ cat << "EOF"
 
 EOF
 
-read -p "You may need run mnstart command to start a masternode after update. Press ENTER to continue " -n1 -s
+read -p "Press ENTER to continue " -n1 -s
 
 echo ""
 EOL
