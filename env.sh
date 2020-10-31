@@ -2,7 +2,7 @@ echo "Setting up enviromental commands..."
 cd ~
 
 
-rm /root/.commands/info > /dev/null 2>&1
+rm /root/.commands/getinfo > /dev/null 2>&1
 rm /root/.commands/status > /dev/null 2>&1
 rm /root/.commands/nodes > /dev/null 2>&1
 rm /root/.commands/connections > /dev/null 2>&1
@@ -24,7 +24,7 @@ echo "you can type these commands anywhere in terminal."
 echo ""
 echo "Command              | What does it do?"
 echo "---------------------------------------------------"
-echo "info                 | Get wallet info"
+echo "getinfo              | Get wallet info"
 echo ""
 echo "status               | Shroudnode status"
 echo ""
@@ -55,7 +55,7 @@ echo ""
 
 EOL
 
-cat > ~/.commands/info << EOL
+cat > ~/.commands/getinfo << EOL
 #!/bin/bash    
 ~/ShroudX/shroud-cli getinfo
 EOL
@@ -190,7 +190,7 @@ echo ""
 EOL
 
 chmod +x /root/.commands/help
-chmod +x /root/.commands/info
+chmod +x /root/.commands/getinfo
 chmod +x /root/.commands/status
 chmod +x /root/.commands/nodes
 chmod +x /root/.commands/connections
