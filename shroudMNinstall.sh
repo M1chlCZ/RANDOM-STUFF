@@ -100,6 +100,15 @@ apt-get update
 apt-get upgrade -y
 apt-get install git jq dnsutils systemd -y > /dev/null 2>&1
 
+clear
+
+echo "Installing dependencies..."
+apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev libzmq3-dev libminizip-dev
+add-apt-repository ppa:bitcoin/bitcoin && apt-get update && apt-get install libdb4.8-dev libdb4.8++-dev
+
+clear
+
+
 # Check for systemd
 systemctl --version >/dev/null 2>&1 || { echo "systemd is required. Are you using Ubuntu 16.04?"  >&2; exit 1; }
 
@@ -177,6 +186,8 @@ fi
 #fi
 
 clear
+
+
 
 # Generate random passwords
 RPCUSER=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1)
