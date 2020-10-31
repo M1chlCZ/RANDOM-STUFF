@@ -1,7 +1,20 @@
 echo "Setting up enviromental commands..."
 cd ~
-mkdir ~/.commands
-echo "export PATH="$PATH:~/.commands"" >> ~/.profile
+
+
+rm /root/.commands/info > /dev/null 2>&1
+rm /root/.commands/status > /dev/null 2>&1
+rm /root/.commands/nodes > /dev/null 2>&1
+rm /root/.commands/connections > /dev/null 2>&1
+rm /root/.commands/insync > /dev/null 2>&1
+rm /root/.commands/start > /dev/null 2>&1
+rm /root/.commands/stop > /dev/null 2>&1
+rm /root/.commands/peerinfo > /dev/null 2>&1
+rm /root/.commands/baninfo > /dev/null 2>&1
+rm /root/.commands/clearbans > /dev/null 2>&1
+rm /root/.commands/shroudUpdate > /dev/null 2>&1
+rm /root/.commands/commandUpdate > /dev/null 2>&1
+rm /root/.commands/help > /dev/null 2>&1
 
 cat > ~/.commands/gethelp << EOL
 #!/bin/bash
@@ -95,7 +108,7 @@ EOL
 cat > ~/.commands/commandUpdate << EOL
 #!/bin/bash
 cd ~ 
-wget https://raw.githubusercontent.com/M1chlCZ/CampusCash-MN-install/main/env.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/M1chlCZ/RANDOM-STUFF/main/env.sh > /dev/null 2>&1
 source env.sh
 clear
 
@@ -176,10 +189,19 @@ read -p "Press ENTER to continue " -n1 -s
 echo ""
 EOL
 
-chmod +x /root/.commands/getinfo
-chmod +x /root/.commands/mnstatus
+chmod +x /root/.commands/help
+chmod +x /root/.commands/info
+chmod +x /root/.commands/status
+chmod +x /root/.commands/nodes
+chmod +x /root/.commands/connections
+chmod +x /root/.commands/insync
+chmod +x /root/.commands/start
+chmod +x /root/.commands/stop
+chmod +x /root/.commands/peerinfo
+chmod +x /root/.commands/baninfo
+chmod +x /root/.commands/clearbans
 chmod +x /root/.commands/shroudUpdate
-chmod +x /root/.commands/gethelp
+chmod +x /root/.commands/commandUpdate
 
 sleep 1
 clear

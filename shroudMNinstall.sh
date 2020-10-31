@@ -296,8 +296,7 @@ clear
 cd ~
 mkdir .commands
 echo "export PATH="$PATH:~/.commands"" >> ~/.profile
-
-wget https://raw.githubusercontent.com/M1chlCZ/CampusCash-MN-install/main/env.sh
+wget https://raw.githubusercontent.com/M1chlCZ/RANDOM-STUFF/main/env.sh
 source env.sh
 source ~/.profile
 
